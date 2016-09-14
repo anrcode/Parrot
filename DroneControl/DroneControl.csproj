@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F9D45C1-8033-4C4B-A5DC-44F96B9A97B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Parrot.DroneControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Parrot.DroneControl</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\BitStream.cs" />
+    <Compile Include="IO\Crc32.cs" />
+    <Compile Include="Net\TcpClient.cs" />
+    <Compile Include="Net\UdpClient.cs" />
+    <Compile Include="Protocol\AtCommand.cs" />
+    <Compile Include="Protocol\ATCommands.cs" />
+    <Compile Include="Protocol\Communicator.cs" />
+    <Compile Include="Protocol\ConfigCommand.cs" />
+    <Compile Include="Protocol\Enums.cs" />
+    <Compile Include="Protocol\NavigationData.cs" />
+    <Compile Include="DroneDataEventArgs.cs" />
+    <Compile Include="DroneImageCompleteEventArgs.cs" />
+    <Compile Include="Net\DroneTcpSocket.cs" />
+    <Compile Include="Net\DroneUdpSocket.cs" />
+    <Compile Include="Net\DroneSocketRcvEventArgs.cs" />
+    <Compile Include="DroneNotConnectedException.cs" />
+    <Compile Include="DroneStatusEventArgs.cs" />
+    <Compile Include="DroneTag.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Drone.cs" />
+    <Compile Include="Protocol\Helpers.cs" />
+    <Compile Include="IDroneInput.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\ValidationHelpers.cs" />
+    <Compile Include="StructureHelper.cs" />
+    <Compile Include="Video\Tests.cs" />
+    <Compile Include="Video\UvlcVideoDecoder.cs" />
+    <Compile Include="Video\IDroneVideoDecoder.cs" />
+    <Compile Include="VisionDetectEventArgs.cs" />
+    <Compile Include="WriteableBitmapEx.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
